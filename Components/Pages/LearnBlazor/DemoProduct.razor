@@ -22,7 +22,7 @@
 
                 }
                 <br />
-                <input type="button" class="btn btn-danger" style="width:100px" value="Delete"/>
+                <input type="button" class="btn btn-danger" style="width:100px" value="Delete" @onclick="()=>RemoveProduct(prod.Id)"/>
             </div>    
         }
     </div>
@@ -76,6 +76,15 @@
     {
         Count+=counter;
 
+    }
+
+    private void RemoveProduct(int productId)
+    {
+        var prod = ProductList.FirstOrDefault(p => p.Id == productId);
+        if (prod != null)
+        {
+            ProductList.Remove(prod);
+        }
     }
 
 
