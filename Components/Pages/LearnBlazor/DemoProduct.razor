@@ -29,7 +29,7 @@
     <div class="row" pt-4>
         
         <input type="button" class="btn btn-success" style="width:100px" value="Counter" 
-        @onclick="IncrementCount"
+        @onclick="()=>IncrementCount(5)"
         />
         Counter: @Count <br />
     </div>
@@ -72,9 +72,9 @@
 
     }
 
-    public void IncrementCount()
+    public void IncrementCount(int counter)
     {
-        Count++;
+        Count+=counter;
 
     }
 
